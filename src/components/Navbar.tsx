@@ -8,15 +8,15 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full glass border-b border-primary/20 shadow-cyber">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="p-2 rounded-xl bg-gradient-hero shadow-soft">
+          <div className="p-3 rounded-xl bg-gradient-hero shadow-cyber hover:shadow-neon transition-elastic hover:scale-105 animate-pulse-glow">
             <img 
               src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
               alt="SahiStart Logo" 
-              className="h-10 w-auto filter brightness-0 invert"
+              className="h-12 w-auto"
             />
           </div>
         </div>

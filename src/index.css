@@ -45,21 +45,26 @@ All colors MUST be HSL.
     --input: 220 13% 91%;
     --ring: 225 84% 12%;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    /* Custom gradients - More futuristic */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)), hsl(var(--secondary)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)), hsl(var(--secondary)));
+    --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-cosmic: radial-gradient(ellipse at center, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
 
-    /* Shadows */
+    /* Shadows - Enhanced for futuristic look */
     --shadow-soft: 0 2px 8px hsl(var(--primary) / 0.08);
     --shadow-medium: 0 8px 24px hsl(var(--primary) / 0.12);
     --shadow-strong: 0 16px 48px hsl(var(--primary) / 0.16);
-    --shadow-glow: 0 0 24px hsl(var(--secondary) / 0.3);
+    --shadow-glow: 0 0 24px hsl(var(--secondary) / 0.4);
+    --shadow-neon: 0 0 20px hsl(var(--accent) / 0.6), 0 0 40px hsl(var(--accent) / 0.4), 0 0 60px hsl(var(--accent) / 0.2);
+    --shadow-cyber: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--secondary) / 0.3), 0 0 30px hsl(var(--accent) / 0.2);
 
-    /* Animations */
+    /* Animations - More dynamic */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
     --radius: 0.5rem;
 
@@ -187,5 +192,72 @@ All colors MUST be HSL.
 
   .bg-gradient-accent {
     background: var(--gradient-accent);
+  }
+
+  .bg-gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .bg-gradient-cosmic {
+    background: var(--gradient-cosmic);
+  }
+
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .shadow-cyber {
+    box-shadow: var(--shadow-cyber);
+  }
+
+  .transition-elastic {
+    transition: var(--transition-elastic);
+  }
+
+  /* Futuristic animations */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--shadow-glow); }
+    50% { box-shadow: var(--shadow-neon); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Glassmorphism effects */
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsla(var(--background), 0.75);
+    border: 1px solid hsla(var(--border), 0.3);
+  }
+
+  .glass-card {
+    backdrop-filter: blur(20px) saturate(200%);
+    background: linear-gradient(135deg, 
+      hsla(var(--background), 0.1),
+      hsla(var(--background), 0.05)
+    );
+    border: 1px solid hsla(var(--border), 0.2);
+    box-shadow: 0 8px 32px hsla(var(--primary), 0.1);
   }
 }
