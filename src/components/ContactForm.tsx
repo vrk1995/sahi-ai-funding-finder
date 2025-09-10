@@ -96,7 +96,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <div className="font-medium">Phone</div>
-                  <div className="text-muted-foreground">+91 98765 43210</div>
+                  <div className="text-muted-foreground">+91 9061791767</div>
                 </div>
               </div>
 
@@ -110,15 +110,6 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <MapPin className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <div className="font-medium">Address</div>
-                  <div className="text-muted-foreground">Bangalore, Karnataka, India</div>
-                </div>
-              </div>
 
               <div className="flex items-center space-x-4">
                 <div className="p-3 rounded-lg bg-primary/10">
@@ -153,30 +144,34 @@ const ContactForm = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-medium border-2">
-              <CardHeader>
-                <CardTitle className="text-2xl">Start Your Funding Journey</CardTitle>
-                <CardDescription className="text-base">
-                  Fill out this form and our AI will analyze your profile to find the best funding matches.
+            <Card className="shadow-strong border-2 border-primary/20 bg-gradient-to-br from-background to-muted/50">
+              <CardHeader className="text-center pb-8">
+                <div className="mx-auto w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center mb-4 shadow-glow">
+                  <Send className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <CardTitle className="text-3xl bg-gradient-hero bg-clip-text text-transparent">Start Your Funding Journey</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed">
+                  Answer a few questions and our AI will analyze your profile to find the best funding matches tailored for your business.
                 </CardDescription>
               </CardHeader>
               
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <CardContent className="pt-0">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                    <div className="space-y-3">
+                      <Label htmlFor="name" className="text-sm font-semibold text-foreground">Full Name *</Label>
                       <Input
                         id="name"
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
-                        placeholder="Your full name"
+                        placeholder="Enter your full name"
                         required
+                        className="h-12 border-2 border-muted focus:border-primary/50 bg-background/50 transition-all duration-200"
                       />
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                    <div className="space-y-3">
+                      <Label htmlFor="email" className="text-sm font-semibold text-foreground">Email Address *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -184,29 +179,32 @@ const ContactForm = () => {
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         placeholder="your@email.com"
                         required
+                        className="h-12 border-2 border-muted focus:border-primary/50 bg-background/50 transition-all duration-200"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                    <div className="space-y-3">
+                      <Label htmlFor="phone" className="text-sm font-semibold text-foreground">Phone Number</Label>
                       <Input
                         id="phone"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 9061791767"
+                        className="h-12 border-2 border-muted focus:border-primary/50 bg-background/50 transition-all duration-200"
                       />
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company Name *</Label>
+                    <div className="space-y-3">
+                      <Label htmlFor="company" className="text-sm font-semibold text-foreground">Company Name *</Label>
                       <Input
                         id="company"
                         value={formData.company}
                         onChange={(e) => handleInputChange("company", e.target.value)}
                         placeholder="Your startup name"
                         required
+                        className="h-12 border-2 border-muted focus:border-primary/50 bg-background/50 transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -248,41 +246,42 @@ const ContactForm = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="fundingAmount">Funding Amount Required</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="fundingAmount" className="text-sm font-semibold text-foreground">Funding Amount Required</Label>
                     <Select value={formData.fundingAmount} onValueChange={(value) => handleInputChange("fundingAmount", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select funding range" />
+                      <SelectTrigger className="h-12 border-2 border-muted focus:border-primary/50 bg-background/50">
+                        <SelectValue placeholder="Select your funding range" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="under-10l">Under ₹10 Lakhs</SelectItem>
-                        <SelectItem value="10l-50l">₹10 - 50 Lakhs</SelectItem>
-                        <SelectItem value="50l-1cr">₹50 Lakhs - 1 Crore</SelectItem>
-                        <SelectItem value="1cr-5cr">₹1 - 5 Crores</SelectItem>
-                        <SelectItem value="5cr-10cr">₹5 - 10 Crores</SelectItem>
-                        <SelectItem value="above-10cr">Above ₹10 Crores</SelectItem>
+                        <SelectItem value="under-10l">💰 Under ₹10 Lakhs</SelectItem>
+                        <SelectItem value="10l-50l">💸 ₹10 - 50 Lakhs</SelectItem>
+                        <SelectItem value="50l-1cr">💎 ₹50 Lakhs - 1 Crore</SelectItem>
+                        <SelectItem value="1cr-5cr">🚀 ₹1 - 5 Crores</SelectItem>
+                        <SelectItem value="5cr-10cr">⭐ ₹5 - 10 Crores</SelectItem>
+                        <SelectItem value="above-10cr">🏆 Above ₹10 Crores</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Tell us about your business and funding needs</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="message" className="text-sm font-semibold text-foreground">Tell us about your business and funding needs</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
-                      placeholder="Describe your business, the problem you're solving, and how you plan to use the funding..."
-                      rows={4}
+                      placeholder="Describe your business, the problem you're solving, and how you plan to use the funding. Share your vision and goals..."
+                      rows={5}
+                      className="border-2 border-muted focus:border-primary/50 bg-background/50 transition-all duration-200 resize-none"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-smooth shadow-medium group"
+                    className="w-full h-14 bg-gradient-hero text-primary-foreground hover:opacity-90 hover:scale-[1.02] transition-all duration-300 shadow-strong hover:shadow-glow group text-lg font-semibold"
                   >
-                    Get Funding Matches
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-smooth" />
+                    🎯 Get My Funding Matches
+                    <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-smooth" />
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">

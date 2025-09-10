@@ -12,11 +12,13 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img 
-            src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
-            alt="SahiStart Logo" 
-            className="h-8 w-auto"
-          />
+          <div className="p-2 rounded-xl bg-gradient-hero shadow-soft">
+            <img 
+              src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
+              alt="SahiStart Logo" 
+              className="h-10 w-auto filter brightness-0 invert"
+            />
+          </div>
         </div>
 
         {/* Desktop Navigation */}
