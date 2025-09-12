@@ -1,32 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
-  Facebook,
-  ArrowRight,
-  Heart
-} from "lucide-react";
-
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowRight, Heart } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer Content */}
       <div className="container px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <img 
-                src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
-                alt="SahiStart Logo" 
-                className="h-8 w-auto mb-4 brightness-0 invert"
-              />
+              <img src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" alt="SahiStart Logo" className="h-8 w-auto mb-4 brightness-0 invert" />
               <p className="text-primary-foreground/80 leading-relaxed">
                 Empowering startups and MSMEs with AI-driven funding solutions. 
                 Your success is our mission.
@@ -40,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">+91 98765 43210</span>
+                <span className="text-sm">+91 9061791767</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4" />
@@ -112,37 +96,20 @@ const Footer = () => {
             
             <div className="space-y-3">
               <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 text-sm bg-primary-foreground/10 border border-primary-foreground/20 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary text-primary-foreground placeholder:text-primary-foreground/60"
-                />
-                <Button 
-                  size="sm" 
-                  variant="secondary"
-                  className="bg-secondary hover:bg-secondary-light transition-smooth"
-                >
+                <input type="email" placeholder="Enter your email" className="flex-1 px-3 py-2 text-sm bg-primary-foreground/10 border border-primary-foreground/20 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary text-primary-foreground placeholder:text-primary-foreground/60" />
+                <Button size="sm" variant="secondary" className="bg-secondary hover:bg-secondary-light transition-smooth">
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
               
               <div className="flex space-x-3">
-                <a 
-                  href="#" 
-                  className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth"
-                >
+                <a href="#" className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a 
-                  href="#" 
-                  className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth"
-                >
+                <a href="#" className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth">
                   <Twitter className="w-4 h-4" />
                 </a>
-                <a 
-                  href="#" 
-                  className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth"
-                >
+                <a href="#" className="p-2 rounded-md bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth">
                   <Facebook className="w-4 h-4" />
                 </a>
               </div>
@@ -179,8 +146,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
