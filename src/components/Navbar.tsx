@@ -26,7 +26,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
               alt="SahiStart Logo" 
-              className="h-20 w-auto"
+              className="h-40 w-auto"
             />
           </div>
         </div>
