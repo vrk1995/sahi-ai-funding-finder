@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full glass border-b border-primary/20 shadow-cyber">
-      <div className="container flex h-20 items-center justify-between px-4">
+      <div className="container flex h-40 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="p-2 rounded-xl bg-background/90 shadow-cyber hover:shadow-neon transition-elastic hover:scale-105 border border-primary/20">
