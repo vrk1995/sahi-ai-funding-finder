@@ -1,11 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, User } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
 
   return (
     <nav className="sticky top-0 z-50 w-full glass border-b border-primary/20 shadow-cyber">
@@ -42,12 +52,31 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" size="sm">
-            Login
-          </Button>
-          <Button variant="default" size="sm" className="bg-gradient-hero text-primary-foreground hover:opacity-90 transition-smooth">
-            Get Started
-          </Button>
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                  <User className="h-4 w-4" />
+                  <span>{user.email}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={handleSignOut} className="flex items-center space-x-2">
+                  <LogOut className="h-4 w-4" />
+                  <span>Sign out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <>
+              <Button variant="outline" size="sm" onClick={() => navigate("/auth")}>
+                Login
+              </Button>
+              <Button variant="default" size="sm" className="bg-gradient-hero text-primary-foreground hover:opacity-90 transition-smooth" onClick={() => navigate("/auth")}>
+                Get Started
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile menu button */}
@@ -79,12 +108,24 @@ const Navbar = () => {
               Contact
             </a>
             <div className="pt-4 space-y-2">
-              <Button variant="outline" size="sm" className="w-full">
-                Login
-              </Button>
-              <Button variant="default" size="sm" className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-smooth">
-                Get Started
-              </Button>
+              {user ? (
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">{user.email}</div>
+                  <Button variant="outline" size="sm" className="w-full" onClick={handleSignOut}>
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign out
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/auth")}>
+                    Login
+                  </Button>
+                  <Button variant="default" size="sm" className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-smooth" onClick={() => navigate("/auth")}>
+                    Get Started
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
