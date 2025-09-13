@@ -133,8 +133,11 @@ const Auth = () => {
       <Card className="w-full max-w-md glass-card">
         <CardHeader className="space-y-1 text-center">
           <div className="flex items-center justify-center mb-4">
-            <Rocket className="h-8 w-8 text-primary mr-2" />
-            <span className="text-2xl font-bold text-gradient">SahiStart</span>
+            <img 
+              src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
+              alt="SahiStart Logo" 
+              className="h-12 w-auto"
+            />
           </div>
           <CardTitle className="text-2xl text-foreground">Welcome</CardTitle>
           <CardDescription className="text-muted-foreground">
