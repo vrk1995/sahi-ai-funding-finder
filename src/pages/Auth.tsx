@@ -16,6 +16,7 @@ const Auth = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [resetLoading, setResetLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -96,6 +97,37 @@ const Auth = () => {
     }
   };
 
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError("Please enter your email address first.");
+      return;
+    }
+
+    setResetLoading(true);
+    setError("");
+
+    try {
+      const redirectUrl = `${window.location.origin}/auth`;
+      
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: redirectUrl
+      });
+
+      if (error) {
+        setError(error.message);
+      } else {
+        toast({
+          title: "Password reset email sent",
+          description: "Check your email for a link to reset your password.",
+        });
+      }
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setResetLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
       <Card className="w-full max-w-md glass-card">
@@ -159,6 +191,17 @@ const Auth = () => {
                 <Button type="submit" className="w-full" disabled={loading}>
                   {loading ? "Signing in..." : "Sign In"}
                 </Button>
+                <div className="text-center">
+                  <Button
+                    type="button"
+                    variant="link"
+                    className="text-sm text-primary hover:text-primary/80"
+                    onClick={handleForgotPassword}
+                    disabled={resetLoading}
+                  >
+                    {resetLoading ? "Sending email..." : "Forgot your password?"}
+                  </Button>
+                </div>
               </form>
             </TabsContent>
             
