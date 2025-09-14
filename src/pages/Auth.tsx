@@ -9,7 +9,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import './src/custom.css';
 
 const Auth = () => {
   const [email, setEmail] = useState("");
