@@ -144,7 +144,7 @@ const Auth = () => {
             <img 
               src="/assets/sahi-start-logo-only.png" 
               alt="SahiStart Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
             <div className="flex items-center">
               <span className="sahi-text">Sahi</span>
