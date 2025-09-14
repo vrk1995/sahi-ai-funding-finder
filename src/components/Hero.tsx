@@ -14,6 +14,11 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
+            {/* Brand Name */}
+            <div className="flex items-center mb-4">
+              <span className="sahi-text">SAHI</span>&nbsp;&nbsp;<span className="start-text">START</span>
+            </div>
+            
             <div className="inline-flex items-center px-6 py-3 rounded-full glass border shadow-cyber animate-pulse-glow">
               <Rocket className="w-5 h-5 text-secondary mr-2" />
               <span className="text-sm font-semibold bg-gradient-neon bg-clip-text text-transparent">🚀 AI-Powered Funding Solutions</span>
