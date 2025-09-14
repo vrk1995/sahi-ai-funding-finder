@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="space-y-4">
             {/* Brand Name */}
             <div className="flex items-center m-0 p-0 mb-2">
-              <span className="sahi-text text-5xl lg:text-7xl">SAHI</span>&nbsp;&nbsp;<span className="start-text text-5xl lg:text-7xl">START</span>
+              <span className="sahi-text text-6xl lg:text-10xl">SAHI</span>&nbsp;&nbsp;<span className="start-text text-6xl lg:text-10xl">START</span>
             </div>
             
             <div className="inline-flex items-center px-6 py-3 rounded-full glass border shadow-cyber animate-pulse-glow">
