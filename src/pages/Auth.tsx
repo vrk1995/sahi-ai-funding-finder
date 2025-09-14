@@ -134,7 +134,7 @@ const Auth = () => {
         <CardHeader className="space-y-1 text-center">
           <div className="flex items-center justify-center mb-4">
             <img 
-              src="/lovable-uploads/e5473e11-7e7f-40c0-a39e-8031f68ef2b2.png" 
+              src="/assets/sahistart-logo.png" 
               alt="SahiStart Logo" 
               className="h-12 w-auto"
             />
