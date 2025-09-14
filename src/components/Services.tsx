@@ -167,6 +167,7 @@ const Services = () => {
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth"
+              onClick={() => window.open('https://calendly.com/vishnu-sahistart/30min', '_blank')}
             >
               Schedule Consultation
             </Button>
