@@ -3,7 +3,7 @@ import { ArrowRight, Rocket, Target, TrendingUp } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative pt-8 pb-16 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative pt-2 lg:pt-4 pb-16 overflow-hidden min-h-screen flex items-center lg:items-start lg:pt-8">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-cosmic opacity-30"></div>
       <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-neon opacity-20 rounded-full blur-3xl animate-float"></div>
