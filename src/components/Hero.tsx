@@ -42,6 +42,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-hero text-primary-foreground hover:scale-105 transition-elastic shadow-cyber hover:shadow-neon group text-lg px-8 py-4 h-auto"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 🚀 Find Funding Now
                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-elastic" />
