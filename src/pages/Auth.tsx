@@ -147,7 +147,7 @@ const Auth = () => {
               className="h-16 w-auto"
             />
             <div className="flex items-center">
-              <span className="sahi-text">SAHI</span><span className="start-text">  START</span>
+              <span className="sahi-text">SAHI </span><span className="start-text">START</span>
             </div>
           </div>
           <CardTitle className="text-2xl text-foreground">Welcome</CardTitle>
