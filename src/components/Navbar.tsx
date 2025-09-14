@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <div className="p-2 rounded-xl bg-background/90 shadow-cyber hover:shadow-neon transition-elastic hover:scale-105 border border-primary/20">
             <img 
-              src="/assets/sahistart-logo-with-name.png" 
+              src="/assets/sahi-start-logo-home-page.png" 
               alt="SahiStart Logo" 
               className="h-16 w-auto"
             />
