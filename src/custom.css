@@ -1,0 +1,18 @@
+.sahi-text, .start-text {
+  font-family: 'Montserrat', sans-serif; /* Using Montserrat as an example */
+  font-weight: 600; /* Bold */
+  /* You might need to adjust font-size based on your layout */
+  font-size: 1.5em; /* Example size */
+  letter-spacing: 0.1em
+  
+}
+
+.sahi-text {
+  color: #1a2a4e; /* A dark blue similar to your logo */
+  /* Or you can try #222e4c based on analysis */
+}
+
+.start-text {
+  color: #4CAF50; /* A green similar to your logo */
+  /* Or you can try #3b9b4f based on analysis */
+}
