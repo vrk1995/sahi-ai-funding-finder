@@ -15,7 +15,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Brand Name */}
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-3">
               <span className="sahi-text">SAHI</span>&nbsp;&nbsp;<span className="start-text">START</span>
             </div>
             
