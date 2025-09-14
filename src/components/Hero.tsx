@@ -3,7 +3,7 @@ import { ArrowRight, Rocket, Target, TrendingUp } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative py-20 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative pt-8 pb-16 overflow-hidden min-h-screen flex items-center">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-cosmic opacity-30"></div>
       <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-neon opacity-20 rounded-full blur-3xl animate-float"></div>
@@ -13,10 +13,10 @@ const Hero = () => {
       <div className="container relative z-10 px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             {/* Brand Name */}
-            <div className="flex items-center m-0 p-0">
-              <span className="sahi-text">SAHI</span>&nbsp;&nbsp;<span className="start-text">START</span>
+            <div className="flex items-center m-0 p-0 mb-2">
+              <span className="sahi-text text-4xl lg:text-5xl">SAHI</span>&nbsp;&nbsp;<span className="start-text text-4xl lg:text-5xl">START</span>
             </div>
             
             <div className="inline-flex items-center px-6 py-3 rounded-full glass border shadow-cyber animate-pulse-glow">
