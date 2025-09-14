@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Eye, EyeOff, Rocket } from "lucide-react";
+import { Eye, EyeOff, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Auth = () => {
@@ -130,14 +130,26 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
-      <Card className="w-full max-w-md glass-card">
+      <Card className="w-full max-w-md glass-card relative">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute top-4 right-4 h-8 w-8 rounded-full"
+          onClick={() => navigate("/")}
+        >
+          <X className="h-4 w-4" />
+        </Button>
         <CardHeader className="space-y-1 text-center">
-          <div className="flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <img 
-              src="/assets/sahi-start-logo-only.png" 
+              src="/assets/sahistart-logo.png" 
               alt="SahiStart Logo" 
               className="h-12 w-auto"
             />
+            <div className="flex items-center">
+              <span className="sahi-text">Sahi</span>
+              <span className="start-text">Start</span>
+            </div>
           </div>
           <CardTitle className="text-2xl text-foreground">Welcome</CardTitle>
           <CardDescription className="text-muted-foreground">
