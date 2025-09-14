@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import './src/custom.css';
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -148,7 +149,7 @@ const Auth = () => {
             />
             <div className="flex items-center">
               <span className="sahi-text">Sahi</span>
-              <span className="start-text">Start</span>
+              <span className="start-text"> Start</span>
             </div>
           </div>
           <CardTitle className="text-2xl text-foreground">Welcome</CardTitle>
