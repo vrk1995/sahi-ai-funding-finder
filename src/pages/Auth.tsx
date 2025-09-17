@@ -20,6 +20,15 @@ const Auth = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const validatePassword = (password: string) => {
+    const minLength = password.length >= 8;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasDigit = /\d/.test(password);
+    
+    return minLength && hasUppercase && hasLowercase && hasDigit;
+  };
+
   useEffect(() => {
     // Check if user is already logged in
     const checkUser = async () => {
@@ -35,6 +44,12 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!validatePassword(password)) {
+      setError("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const redirectUrl = `${window.location.origin}/`;
@@ -242,7 +257,7 @@ const Auth = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      minLength={6}
+                      minLength={8}
                     />
                     <Button
                       type="button"
@@ -254,7 +269,7 @@ const Auth = () => {
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </Button>
                   </div>
-                  <p className="text-sm text-muted-foreground">Password must be at least 6 characters</p>
+                  <p className="text-sm text-muted-foreground">Password must be at least 8 characters with uppercase, lowercase, and digit</p>
                 </div>
                 {error && (
                   <Alert variant="destructive">
