@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   ArrowRight, 
   ArrowLeft, 
@@ -155,26 +156,53 @@ const InteractiveQuestionnaire = () => {
     setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    toast({
-      title: "Application Submitted! 🎉",
-      description: "Our AI is analyzing your profile. You'll receive personalized funding matches within 24 hours.",
-    });
+    try {
+      // Save to Supabase
+      const { error } = await supabase
+        .from('form_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          stage: formData.stage,
+          industry: formData.industry,
+          funding_amount: formData.fundingAmount,
+          message: formData.message
+        });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      stage: "",
-      industry: "",
-      fundingAmount: "",
-      message: ""
-    });
-    setCurrentStep(0);
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Application Submitted! 🎉",
+        description: "Our AI is analyzing your profile. You'll receive personalized funding matches within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        stage: "",
+        industry: "",
+        fundingAmount: "",
+        message: ""
+      });
+      setCurrentStep(0);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const renderStep = () => {
