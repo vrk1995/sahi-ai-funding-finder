@@ -124,10 +124,10 @@ const Footer = () => {
       <div className="container px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-primary-foreground/80">
-            © {currentYear} Sahistart Pvt Ltd.
+            © {currentYear} Sahistart Pvt Ltd. <br></br>
+            All rights reserved. <br></br>
             CIN: U70200KL2025PTC097293
-            All rights reserved.
-              
+          
           </div>
           
           <div className="flex items-center space-x-6 text-sm">
