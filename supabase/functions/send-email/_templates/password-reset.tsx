@@ -12,18 +12,18 @@ import {
 } from 'npm:@react-email/components@0.0.22'
 import * as React from 'npm:react@18.3.1'
 
-interface AuthConfirmationEmailProps {
-  confirmationUrl: string
+interface PasswordResetEmailProps {
+  resetUrl: string
   email: string
 }
 
-export const AuthConfirmationEmail = ({
-  confirmationUrl,
+export const PasswordResetEmail = ({
+  resetUrl,
   email,
-}: AuthConfirmationEmailProps) => (
+}: PasswordResetEmailProps) => (
   <Html>
     <Head />
-    <Preview>Welcome to SahiStart - Confirm your account</Preview>
+    <Preview>Reset your SahiStart password</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
@@ -40,22 +40,22 @@ export const AuthConfirmationEmail = ({
           </div>
         </Section>
         
-        <Heading style={h1}>Welcome to SahiStart!</Heading>
+        <Heading style={h1}>Reset Your Password</Heading>
         
         <Text style={text}>
-          Thank you for signing up for SahiStart. We're excited to help you turn your business ideas into reality.
+          You've requested to reset your password for your SahiStart account. No worries - it happens to the best of us!
         </Text>
         
         <Text style={text}>
-          To complete your account setup and start your entrepreneurial journey, please confirm your email address by clicking the button below:
+          Click the button below to set a new password and regain access to your account:
         </Text>
         
         <Section style={buttonContainer}>
           <Link
-            href={confirmationUrl}
+            href={resetUrl}
             style={button}
           >
-            Confirm Your Account
+            Reset Password
           </Link>
         </Section>
         
@@ -64,11 +64,15 @@ export const AuthConfirmationEmail = ({
         </Text>
         
         <Text style={linkText}>
-          {confirmationUrl}
+          {resetUrl}
+        </Text>
+        
+        <Text style={warningText}>
+          This password reset link will expire in 24 hours for security reasons.
         </Text>
         
         <Text style={footerText}>
-          If you didn't create an account with SahiStart, you can safely ignore this email.
+          If you didn't request this password reset, you can safely ignore this email. Your password will remain unchanged.
         </Text>
         
         <Section style={footer}>
@@ -85,7 +89,7 @@ export const AuthConfirmationEmail = ({
   </Html>
 )
 
-export default AuthConfirmationEmail
+export default PasswordResetEmail
 
 const main = {
   backgroundColor: '#f8fafc',
@@ -160,7 +164,7 @@ const buttonContainer = {
 }
 
 const button = {
-  background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+  background: 'linear-gradient(135deg, #dc2626, #ef4444)',
   borderRadius: '8px',
   color: '#ffffff',
   fontSize: '16px',
@@ -169,7 +173,7 @@ const button = {
   textAlign: 'center' as const,
   display: 'inline-block',
   padding: '14px 32px',
-  boxShadow: '0 4px 14px 0 rgba(59, 130, 246, 0.4)',
+  boxShadow: '0 4px 14px 0 rgba(220, 38, 38, 0.4)',
   transition: 'all 0.2s ease',
 }
 
@@ -187,7 +191,16 @@ const linkText = {
   lineHeight: '1.5',
   wordBreak: 'break-all' as const,
   padding: '0 32px',
-  margin: '0 0 32px',
+  margin: '0 0 24px',
+}
+
+const warningText = {
+  color: '#dc2626',
+  fontSize: '14px',
+  lineHeight: '1.5',
+  margin: '0 0 24px',
+  padding: '0 32px',
+  fontWeight: '500',
 }
 
 const footer = {
