@@ -39,6 +39,9 @@ jobs:
       - name: Build project
         run: npm run build # This creates the 'dist' folder
 
+      - name: Create 404.html for SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         # Configures the repository to deploy to GitHub Pages
         uses: actions/configure-pages@v5
