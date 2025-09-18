@@ -47,7 +47,7 @@ enable_confirmations = true
 # Auth webhook configuration for custom emails
 [auth.hook.send_email]
 enabled = true
-uri = "http://127.0.0.1:54321/functions/v1/send-email"
+uri = "https://xmrqomjmelgontrsqhbx.supabase.co/functions/v1/send-email"
 
 [edge_runtime]
 enabled = true
